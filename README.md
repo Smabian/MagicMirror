@@ -10,6 +10,8 @@
 	<a href="http://slack.magicmirror.builders"><img src="http://slack.magicmirror.builders:3000/badge.svg" alt="Slack Status"></a>
 </p>
 
+Welcome to the **Smart Magic Mirror** Project by Martin Wenzel. This Github repository is a copy of Michael Teeuw's repository and is build on top of **MagicMirror²** with custom adjustments. The readme below is written by Michael Teeuw with adjustments to reflect the adjustments made.
+
 **MagicMirror²** is an open source modular smart mirror platform. With a growing list of installable modules, the **MagicMirror²** allows you to convert your hallway or bathroom mirror into your personal assistant. **MagicMirror²** is built by the creator of [the original MagicMirror](http://michaelteeuw.nl/tagged/magicmirror) with the incredible help of a [growing community of contributors](https://github.com/MichMich/MagicMirror/graphs/contributors).
 
 MagicMirror² focuses on a modular plugin system and uses [Electron](http://electron.atom.io/) as an application wrapper. So no more web server or browser installs necessary!
