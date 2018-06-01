@@ -63,7 +63,7 @@ var config = {
 				// Only required if geolocation doesn't work:
 				latitude: 48.682075,
 				longitude: 9.015431,
-				alwaysShowPrecipitationGraph: true
+				//alwaysShowPrecipitationGraph: true
 			}
 		},*/
 		{
