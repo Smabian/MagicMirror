@@ -37,22 +37,22 @@ var config = {
 			module: "clock",
 			position: "top_left"
 		},
-		{
+		/*{
 			module: "calendar",
-			header: "US Holidays",
+			header: "Kalender",
 			position: "top_left",
 			config: {
 				calendars: [
 					{
 						symbol: "calendar-check-o ",
 						url: "webcal://www.calendarlabs.com/templates/ical/US-Holidays.ics"
-					}
+					},
 				]
 			}
-		},
+		},*/
 		{
 			module: "compliments",
-			position: "lower_third"
+			position: "middle_center"
 		},
 		{
 			module: "currentweather",
@@ -60,18 +60,21 @@ var config = {
 			position: "top_right",
 			config: {
 				location: "Böblingen, DE",
-				locationID: "",  //ID from http://www.openweathermap.org/help/city_list.txt
+				locationID: "2947444",  //ID from http://www.openweathermap.org/help/city_list.txt
 				appid: "8ae8fc50e4d19604379e30356a3439f8"
 			}
 		},
 		{
 			module: "weatherforecast",
 			position: "top_right",
-			header: "Weather Forecast",
+			//header: "Wettervorhersage",
 			config: {
-				location: "New York",
-				locationID: "5128581",  //ID from http://www.openweathermap.org/help/city_list.txt
-				appid: "YOUR_OPENWEATHER_API_KEY"
+				//location: "Böblingen, DE",
+				locationID: "2947444",  //ID from http://www.openweathermap.org/help/city_list.txt
+				appid: "8ae8fc50e4d19604379e30356a3439f8",
+				units: "metric",
+				colored: "true",
+				showRainAmount: "true"
 			}
 		},
 		{
@@ -79,13 +82,19 @@ var config = {
 			position: "bottom_bar",
 			config: {
 				feeds: [
-					{
+					/*{
 						title: "New York Times",
 						url: "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+					},*/
+					{
+						title: "ntv",
+						url: "https://www.n-tv.de/rss"
 					}
 				],
 				showSourceTitle: true,
-				showPublishDate: true
+				showPublishDate: true,
+				showDescription: true,
+				updateInterval: 15000
 			}
 		},
 	]
