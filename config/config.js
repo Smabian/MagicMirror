@@ -54,14 +54,29 @@ var config = {
 			module: "compliments",
 			position: "middle_center"
 		},
+		/*{
+			module: 'MMM-forecast-io',
+			position: 'top_right',  // This can be any of the regions.
+			config: {
+				// See 'Configuration options' for more information.
+				apiKey: '1f5a6e41ffe209c6947e83a40d3088d6', // Dark Sky API key.
+				// Only required if geolocation doesn't work:
+				latitude: 48.682075,
+				longitude: 9.015431,
+				alwaysShowPrecipitationGraph: true
+			}
+		},*/
 		{
 			module: "currentweather",
-			header: "Böblingen",
+			header: "Wetter in Böblingen",
 			position: "top_right",
 			config: {
 				location: "Böblingen, DE",
 				locationID: "2947444",  //ID from http://www.openweathermap.org/help/city_list.txt
-				appid: "8ae8fc50e4d19604379e30356a3439f8"
+				appid: "8ae8fc50e4d19604379e30356a3439f8",
+				//units: "metric",
+				//onlyTemp: true,
+				//showFeelsLike: true
 			}
 		},
 		{
@@ -69,12 +84,11 @@ var config = {
 			position: "top_right",
 			//header: "Wettervorhersage",
 			config: {
-				//location: "Böblingen, DE",
+				location: "Böblingen, DE",
 				locationID: "2947444",  //ID from http://www.openweathermap.org/help/city_list.txt
 				appid: "8ae8fc50e4d19604379e30356a3439f8",
 				units: "metric",
 				colored: "true",
-				showRainAmount: "true"
 			}
 		},
 		{
