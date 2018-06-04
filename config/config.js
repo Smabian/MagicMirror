@@ -84,10 +84,6 @@ var config = {
 			position: "bottom_bar",
 			config: {
 				feeds: [
-					/*{
-						title: "New York Times",
-						url: "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml"
-					},*/
 					{
 						title: "ntv",
 						url: "https://www.n-tv.de/rss"
