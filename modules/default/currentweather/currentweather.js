@@ -251,13 +251,7 @@ Module.register("currentweather",{
 
 			var feelsLike = document.createElement("span");
 			feelsLike.className = "dimmed";
-<<<<<<< HEAD
-			feelsLike.innerHTML = "Gefühlte " + this.feelsLike + "&deg;" + degreeLabel;
-||||||| merged common ancestors
-			feelsLike.innerHTML = "Feels " + this.feelsLike + "&deg;" + degreeLabel;
-=======
 			feelsLike.innerHTML = this.translate("FEELS") + " " + this.feelsLike + "&deg;" + degreeLabel;
->>>>>>> upstream/develop
 			small.appendChild(feelsLike);
 
 			wrapper.appendChild(small);
