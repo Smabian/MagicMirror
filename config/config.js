@@ -37,7 +37,7 @@ var config = {
 			module: "clock",
 			position: "top_left"
 		},
-		/*{
+		{
 			module: "calendar",
 			header: "Kalender",
 			position: "top_left",
@@ -49,7 +49,7 @@ var config = {
 					},
 				]
 			}
-		},*/
+		},
 		/*{
 			module: "compliments",
 			position: "middle_center"

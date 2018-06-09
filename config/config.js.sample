@@ -87,6 +87,25 @@ var config = {
 				showPublishDate: true
 			}
 		},
+		{
+	    module: 'MMM-forecast-io',
+	    position: 'top_right',  // This can be any of the regions.
+	    config: {
+	      // See 'Configuration options' for more information.
+	      apiKey: '', // Dark Sky API key.
+
+	      updateInterval: 900000,  // 15 minutes
+
+	      showWind: true,
+	      showSunrise: true,
+	      showSummary: true,
+	      showPrecipitationGraph: true,
+	      showForecast: true,
+
+	      // Only required if geolocation doesn't work:
+	      latitude:   48.682075,
+      longitude: 9.015431
+    }
 	]
 
 };
