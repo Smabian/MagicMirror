@@ -1,0 +1,124 @@
+.MMM-forecast-io {
+  font-size: 60%;
+  /*max-width: 250px;*/
+}
+
+.MMM-forecast-io .large {
+  font-size: 45px; /*Adjustment to Top Bar Fonts + Logo */
+}
+
+.MMM-forecast-io .big-icon {
+  font-size: 75%;
+  line-height: 65px;
+  display: inline-block;
+  -ms-transform: translate(0, -3px); /* IE 9 */
+  -webkit-transform: translate(0, -3px); /* Safari */
+  transform: translate(0, -3px);
+}
+
+.MMM-forecast-io .summary {
+  /*width: 400px;*/
+}
+
+.MMM-forecast-io .forecast {
+  text-align: left;
+  /*min-width: 400px;*/
+  margin-top: 1ex;
+}
+
+.MMM-forecast-io .forecast-row {
+  line-height: 50%; /* Reduce Forecast Bar Height*/
+  /*font-size: 15px;*/
+}
+
+.MMM-forecast-io .forecast-row>span {
+  display: table-cell;
+  width: 1px;
+}
+
+.MMM-forecast-io .forecast-row .forecast-day {
+  text-align: left;
+  padding-right: 0.2em;
+}
+
+.MMM-forecast-io .forecast-row .forecast-day {
+}
+
+.MMM-forecast-io .forecast-row .weather-icon {
+}
+
+.MMM-forecast-io .forecast-row .forecast-bar {
+}
+
+.MMM-forecast-io .forecast-row .temperature-column {
+}
+
+.MMM-forecast-io .forecast-row .weathericon {
+  text-align: center;
+  padding-right: 0.5em;
+}
+
+.MMM-forecast-io .forecast-bar {
+  display: table;
+  overflow: hidden;
+}
+
+.MMM-forecast-io. .temperature-column {
+}
+
+.MMM-forecast-io .forecast-bar>span {
+  display: table-cell;
+  text-align: center;
+}
+
+.MMM-forecast-io .forecast-bar .bar {
+/*  background-color: #aaa; */
+  background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,0.75));
+  line-height: 0.8em;
+  border-radius: 1em;
+  border: 0.5ex transparent solid;
+  background-clip: padding-box;
+  color: black;
+}
+
+.MMM-forecast-io .forecast-rain {
+  display: table;
+  overflow: hidden;
+}
+
+.MMM-forecast-io .forecast-rain>span {
+  display: table-cell;
+  text-align: center;
+}
+.MMM-forecast-io .forecast-rain .rain-bar {
+  background: linear-gradient(to right, rgba(0,0,255,0.75), rgba(0,0,255,0));
+  line-height: 0.8em;
+  /*border-top-left-radius: 1em;*/
+  /*border-bottom-left-radius: 1em;*/
+  /*border: 0.5ex black solid;*/
+  /*background-clip: padding-box;*/
+  /*color: black;*/
+}
+
+.MMM-forecast-io .precipitation-graph {
+  border: 1px solid #aaa;
+  margin-top: 1ex;
+}
+.MMM-forecast-io .rain-bar {
+  min-width: 5px;
+}
+
+.small.MMM-forecast-io .forecast {
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.small.MMM-forecast-io .summary {
+  width: 300px;
+}
+
+.small.MMM-forecast-io .precipitation-graph {
+  width: 300px;
+}
+
+

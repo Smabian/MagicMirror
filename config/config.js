@@ -54,7 +54,7 @@ var config = {
 			module: "compliments",
 			position: "middle_center"
 		},
-		{
+		/*{
 			module: "currentweather",
 			header: "Wetter in Böblingen",
 			position: "top_right",
@@ -78,7 +78,7 @@ var config = {
 				units: "metric",
 				colored: "true",
 			}
-		},
+		},*/
 		{
 			module: "newsfeed",
 			position: "bottom_bar",
@@ -95,6 +95,26 @@ var config = {
 				updateInterval: 15000
 			}
 		},
+		{
+    module: 'MMM-forecast-io',
+    position: 'top_right',  // This can be any of the regions.
+    config: {
+      // See 'Configuration options' for more information.
+      apiKey: '1f5a6e41ffe209c6947e83a40d3088d6', // Dark Sky API key.
+
+      updateInterval: 900000,  // 15 minutes
+
+      showWind: true,
+      showSunrise: true,
+      showSummary: true,
+      showPrecipitationGraph: true,
+      showForecast: true,
+
+      // Only required if geolocation doesn't work:
+      latitude:   48.682075,
+      longitude: 9.015431
+    }
+  }
 	]
 
 };
