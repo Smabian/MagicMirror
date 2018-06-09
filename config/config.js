@@ -58,7 +58,7 @@ var config = {
           accounts: [
               {
                   user: 'martin.wenzel@outlook.com',
-                  password: 'Password',
+                  password: 'test',
                   host: 'outlook.office365.com',
                   port: 993,
                   tls: true,

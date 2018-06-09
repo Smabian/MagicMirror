@@ -60,6 +60,7 @@ Temporary Items
 !/modules/node_helper/**
 
 # Ignore all modules except the default modules.
+/config/config.js
 #/modules/**
 #!/modules/default
 #!/modules/default/**
