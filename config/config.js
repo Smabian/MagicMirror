@@ -50,10 +50,10 @@ var config = {
 				]
 			}
 		},*/
-		{
+		/*{
 			module: "compliments",
 			position: "middle_center"
-		},
+		},*/
 		/*{
 			module: "currentweather",
 			header: "Wetter in Böblingen",

@@ -166,7 +166,7 @@ Module.register("MMM-forecast-io", {
     temperature.innerHTML = " " + this.temp + "&deg;";
     large.appendChild(temperature);
 
-// ====== wind 
+// ====== wind
     if (this.config.showWind) {
       var padding = document.createElement("span");
       padding.className = "dim";
@@ -200,7 +200,7 @@ Module.register("MMM-forecast-io", {
       //}
 
       var sunTime = document.createElement("div");
-      sunTime.className = "small dimmed summary";
+      sunTime.className = "small dimmed summary"; //dimmed instead of bright is standard value
       sunTime.innerHTML = sunString;
       large.appendChild(sunTime);
     }
@@ -210,7 +210,7 @@ Module.register("MMM-forecast-io", {
     if (this.config.showSummary) {
       var summaryText = minutely ? minutely.summary : hourly.summary;
       var summary = document.createElement("div");
-      summary.className = "small dimmed summary";
+      summary.className = "small bright summary";
 
       // Some German Phrases fro Darksky are somwhat "fancy". They need some replacement
       var mapObj = {
@@ -238,9 +238,9 @@ Module.register("MMM-forecast-io", {
 
     return wrapper;
   },
-
+//CHART RENDERING:
   renderSVGPrecipitationGraph: function () {
-    var width = this.config.precipitationGraphWidth; 
+    var width = this.config.precipitationGraphWidth;
     var height = Math.round(width * 0.3);            // 120 by default
 
     const wrapperEl = document.createElement("div");
@@ -257,32 +257,32 @@ Module.register("MMM-forecast-io", {
 
     var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
 
-    for (i = 0; i < (36+1); i += 1) {
+    for (i = 0; i < (30+1); i += 1) { //Standard: 36 +1
       dataTempLine.push({ x: moment.unix(this.weatherData.hourly.data[i].time).format("YYYY-MM-DD HH:MM"), y: this.weatherData.hourly.data[i].temperature });
       if (i % 2 == 0) {
         dataTempDots.push({ x: moment.unix(this.weatherData.hourly.data[i].time).format("YYYY-MM-DD HH:MM"), y: this.weatherData.hourly.data[i].temperature });
       }
       // dataRain.push({ x: moment.unix(this.weatherData.hourly.data[i].time).format("YYYY-MM-DD HH:MM"), y: this.weatherData.hourly.data[i].precipIntensity });
-      if (this.weatherData.hourly.data[i].precipIntensity > 0) { 
-        rain = this.weatherData.hourly.data[i].precipIntensity 
+      if (this.weatherData.hourly.data[i].precipIntensity > 0) {
+        rain = this.weatherData.hourly.data[i].precipIntensity
       } else {
         rain = null
       }
-      dataRain.push({ 
-        x: moment.unix(this.weatherData.hourly.data[i].time).format("YYYY-MM-DD HH:MM"), 
+      dataRain.push({
+        x: moment.unix(this.weatherData.hourly.data[i].time).format("YYYY-MM-DD HH:MM"),
         y: rain
       });
     }
 
-    // Log.log('dataTempLine', dataTempLine);     
+    // Log.log('dataTempLine', dataTempLine);
 
   var gradientRain = ctx.createLinearGradient(0, 0, 0, 400);
-  gradientRain.addColorStop(0, 'rgba(0, 0, 255, 1)');   
-  gradientRain.addColorStop(0.75, 'rgba(0, 0, 255, 0)');
-  
+  gradientRain.addColorStop(0, 'rgba(0, 0, 255, 1)');
+  gradientRain.addColorStop(0.3, 'rgba(0, 0, 255, 0)');
+
   var gradientTemperature = ctx.createLinearGradient(0, 0, 0, 400);
-  gradientTemperature.addColorStop(0, 'rgba(255, 0, 0, 1)');   
-  gradientTemperature.addColorStop(0.5, 'rgba(255, 0, 0, 0)');
+  gradientTemperature.addColorStop(0, 'rgba(255, 0, 0, 1)');
+  gradientTemperature.addColorStop(0.25, 'rgba(255, 0, 0, 0)');
 
     var data = {
       // labels: labels,
@@ -310,8 +310,8 @@ Module.register("MMM-forecast-io", {
           borderDash: [], // try [5, 15] for instance
           borderDashOffset: 0.0,
           pointBackgroundColor: "black",
-          pointBorderWidth: 3,
-          pointRadius: 4,
+          pointBorderWidth: 1.5,
+          pointRadius: 2,
           showLine: false,
           // notice the gap in the data and the spanGaps: true
           data: dataTempDots,
@@ -327,7 +327,7 @@ Module.register("MMM-forecast-io", {
           borderDash: [], // try [5, 15] for instance
           borderDashOffset: 0.0,
           pointBackgroundColor: "black",
-          pointBorderWidth: 3,
+          pointBorderWidth: 1.5,
           pointRadius: 0,
           // notice the gap in the data and the spanGaps: true
           data: dataTempLine,
@@ -346,19 +346,19 @@ Module.register("MMM-forecast-io", {
               displayFormats: {
                 hour: 'H',
               },
-              stepSize: 4,
+              stepSize: 3,
             },
             display: true,
             scaleLabel: {
-              display: true,
-              labelString: 'Date'
+              display: false,
+              labelString: 'Uhrzeit'
             },
             gridLines: {
                 color: "rgba(128, 128, 128, 0.25)",
             }
           }
         ],
-        yAxes: [  
+        yAxes: [
           {
             id: 'rain',
             position: 'right',
@@ -408,7 +408,7 @@ Module.register("MMM-forecast-io", {
 
   renderPrecipitationGraph: function () {
     var i;
-    var width = this.config.precipitationGraphWidth; 
+    var width = this.config.precipitationGraphWidth;
     var height = Math.round(width * 0.3);            // 120 by default
     var element = document.createElement('canvas');
     element.className = "precipitation-graph";
@@ -451,10 +451,10 @@ Module.register("MMM-forecast-io", {
       timeUntilSunrise = (this.weatherData.daily.data[i].sunriseTime - now);
       timeUntilSunset  = (this.weatherData.daily.data[i].sunsetTime - now);
 
-      if ((timeUntilSunrise < 0) && (i == 0)) {     
+      if ((timeUntilSunrise < 0) && (i == 0)) {
         timeUntilSunrise = 0;       // sunrise has happened already today
       }
-      if ((timeUntilSunset < 0) && (i == 0)) {     
+      if ((timeUntilSunset < 0) && (i == 0)) {
         timeUntilSunset = 0;        // sunset has happened already today
       }
 
@@ -471,7 +471,7 @@ Module.register("MMM-forecast-io", {
     context.save();
     context.strokeStyle = 'gray';
     context.lineWidth = 2;
-    for (i = 1; i < tickCount; i++) {             
+    for (i = 1; i < tickCount; i++) {
       context.moveTo(i * (pixelPerHour*6), height);
       context.lineTo(i * (pixelPerHour*6), height - 7);
       context.stroke();
@@ -495,7 +495,7 @@ Module.register("MMM-forecast-io", {
     context.stroke();
 
     if (this.config.units = "metric") {
-      i = 0;         // ====== freezing line 
+      i = 0;         // ====== freezing line
     } else {
       i = 32;
     }
@@ -558,8 +558,8 @@ Module.register("MMM-forecast-io", {
 
     var timeLabel;
     for (i = 0; i < (24+12+1); i++) {     // text label for temperature on graph
-        
-      if (this.weatherData.hourly.data[i].temperature == tempMin || 
+
+      if (this.weatherData.hourly.data[i].temperature == tempMin ||
           this.weatherData.hourly.data[i].temperature == tempMax) {
 
         tempX = (i * pixelPerHour) - 8;
@@ -677,7 +677,7 @@ Module.register("MMM-forecast-io", {
 
 
     var rainBarWrapper = document.createElement("td");
-    
+
     rainBarWrapper.appendChild(rainBar);
 
     row.appendChild(dayTextSpan);
