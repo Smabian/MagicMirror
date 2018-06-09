@@ -50,6 +50,35 @@ var config = {
 				]
 			}
 		},
+		{
+			module: 'email',
+      position: 'top_left',
+      header: 'Email',
+      config: {
+          accounts: [
+              {
+                  user: 'martin.wenzel@outlook.com',
+                  password: 'Password',
+                  host: 'outlook.office365.com',
+                  port: 993,
+                  tls: true,
+                  authTimeout: 10000,
+                  numberOfEmails: 2,
+              }
+              /*{
+                  user: 'janedoe@gmail.com',
+                  password: 'goodbyeworld',
+                  host: 'imap.gmail.com',
+                  port: 993,
+                  tls: true,
+                  authTimeout: 10000,
+                  numberOfEmails: 2,
+              }*/
+          ],
+          fade: true,
+          maxCharacters: 30
+      }
+		},
 		/*{
 			module: "compliments",
 			position: "middle_center"
