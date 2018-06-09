@@ -95,7 +95,18 @@ Module.register("email",{
 
                     var nameWrapper = document.createElement("td");
                     nameWrapper.className = "bright";
-                    nameWrapper.setAttribute("data-letters", host);
+                    //nameWrapper.setAttribute("data-letters", host);
+
+                    //Different colored Mail Icons
+                    if (host=="m@o") {
+                        nameWrapper.setAttribute("data-letters-blue", host);
+                    } else if (host=="s@s") {
+                        nameWrapper.setAttribute("data-letters-orange", host);
+                    }
+                    else {
+                        nameWrapper.setAttribute("data-letters", host);
+                    }
+
                     nameWrapper.innerHTML = name;
                     senderWrapper.appendChild(nameWrapper);
 

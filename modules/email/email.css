@@ -21,3 +21,35 @@
     margin-right: 1em;
     color: #080606;
 }
+
+[data-letters-blue]:before {
+    content: attr(data-letters-blue);
+    display: inline-block;
+    font-size: 0.6em;
+    font-style: bold;
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    text-align: center;
+    border-radius: 50%;
+    background: blue;
+    vertical-align: middle;
+    margin-right: 1em;
+    color: #FFFFFF;
+}
+
+[data-letters-orange]:before {
+    content: attr(data-letters-orange);
+    display: inline-block;
+    font-size: 0.6em;
+    font-style: bold;
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    text-align: center;
+    border-radius: 50%;
+    background: orange;
+    vertical-align: middle;
+    margin-right: 1em;
+    color: #080606;
+}
