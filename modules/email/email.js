@@ -98,10 +98,11 @@ Module.register("email",{
                     nameWrapper.setAttribute("data-letters", host);
                     nameWrapper.innerHTML = name;
                     senderWrapper.appendChild(nameWrapper);
-                    var addressWrapper = document.createElement("td");
+
+                    /*var addressWrapper = document.createElement("td");
                     addressWrapper.className = "address xsmall thin dimmed";
                     addressWrapper.innerHTML = mailObj.sender[0].address;
-                    senderWrapper.appendChild(addressWrapper);
+                    senderWrapper.appendChild(addressWrapper);*/
                     emailWrapper.appendChild(senderWrapper);
 
                     var subjectWrapper = document.createElement("tr");

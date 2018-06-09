@@ -1,6 +1,10 @@
 .address {
-    padding-left: 10px;
     text-align: right;
+    padding-left: 10px;
+}
+
+.email .normal {
+    font-size: 15px;
 }
 
 [data-letters]:before {
